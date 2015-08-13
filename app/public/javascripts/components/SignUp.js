@@ -73,7 +73,7 @@ var SignUp = React.createClass({
               <label htmlFor="password">Password</label>
               <input type="password" className="form-control" name="password" id="password" placeholder="*******" />
             </div>
-            <button type="submit" className="btn btn-default">Log In</button>
+            <button type="submit" className="btn btn-custom">Log In</button>
           </form>
 
           <form id="signUp" className="col-sm-8 col-md-8 col-lg-8" action="/teachers" method="post" onSubmit={this.handleSubmit}>
@@ -93,7 +93,7 @@ var SignUp = React.createClass({
               <label htmlFor="password">Password</label>
               <input type="password" className="form-control" name="password" id="password" placeholder="*******" />
             </div>
-            <button type="submit" className="btn btn-default">Sign Up</button>
+            <button type="submit" className="btn btn-custom">Sign Up</button>
           </form>
         </div>
       </div>
@@ -112,7 +112,7 @@ var SignUp = React.createClass({
             <label htmlFor="pin">Pin</label>
             <input type="text" className="form-control" name="pin" id="pin" placeholder="1234" />
           </div>
-          <button type="submit" className="btn btn-default">Log In</button>
+          <button type="submit" className="btn btn btn-custom">Log In</button>
         </form>
       </div>
     }

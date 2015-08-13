@@ -19,51 +19,67 @@ var KlassBox = React.createClass({
     event.preventDefault();
     this.props.update(event);
     this.setState({
-      display: panel
+      display: "panel"
     });
   },
   render: function() {
+    var path = "/teachers/"
+                 + this.props.teacher._id
+                 +"/klasses/"
+                 + this.props.klass._id
+                 + "/students"
+
     if(this.state.display === "panel"){
-      var content = <div className="panel panel-default">
+      var content =
+      <div className="panel panel-default flpr dib w400px">
         <div className="panel-heading">
-          <h5 className="panel-title">{this.props.klass.name}</h5>
-          <p>Pin: {this.props.klass.pin}</p>
-          <p>Grade: {this.props.klass.grade}</p>
-          <button onClick={this.editClick}>Edit</button>
-          <button onClick={this.deleteClick}>Delete</button>
-        </div>
-        <div className="panel-body">
-          <StudentList teacher={this.props.teacher}
-                       klass={this.props.klass}/>
+          <div className="row">
+            <div className="col-sm-4">
+              <h1>{this.props.klass.name}</h1>
+              <p>Pin: {this.props.klass.pin}</p>
+              <p>Grade: {this.props.klass.grade}</p>
+              <button className="btn btn-custom mar3px" onClick={this.editClick}>Edit</button>
+              <button className="btn btn-custom mar3px" onClick={this.deleteClick}>Delete</button>
+            </div>
+          </div>
         </div>
       </div>
     } else if (this.state.display === "edit"){
       var path = "/teachers/"+ this.props.teacher._id +"/klasses/" + this.props.klass._id
-      var content = <div className="panel panel-default">
+      var content = <div className="panel panel-default dib w400px">
         <div className="panel-heading">
-          <h5 className="panel-title">{this.props.klass.name}</h5>
+          <h3>{this.props.klass.name}</h3>
           <p>Pin: {this.props.klass.pin}</p>
           <p>Grade: {this.props.klass.grade}</p>
-          <button onClick={this.deleteClick}>Delete</button>
+          <button className="btn btn-custom" onClick={this.deleteClick}>Delete</button>
         </div>
         <div className="panel-body">
           <form id="klassEdit" action={path} method="put" onSubmit={this.handleSubmit}>
-            <input id="name"
+            <div className="form-group">
+              <label htmlFor="last_initial">Class Name</label>
+              <input id="name"
                    type="text"
                    name="name"
-                   placeholder="5C - Second Period"
+                   className="form-control"
                    defaultValue={this.props.klass.name} />
-            <input id="grade"
-                   type="text"
-                   name="grade"
-                   placeholder="5"
-                   defaultValue={this.props.klass.grade} />
-            <input id="pin"
+            </div>
+            <div className="form-group">
+              <label htmlFor="last_initial">Grade</label>
+              <input id="grade"
+                    type="text"
+                    name="grade"
+                    className="form-control"
+                    defaultValue={this.props.klass.grade} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="pin">Pin</label>
+              <input id="pin"
                    type="text"
                    name="pin"
-                   placeholder="1234"
+                   className="form-control"
                    defaultValue={this.props.klass.pin} />
-            <input type="submit" value="Update Class" />
+            </div>
+            <input type="submit" className="btn btn-custom" value="Update Class" />
           </form>
         </div>
       </div>
@@ -71,6 +87,10 @@ var KlassBox = React.createClass({
     return (
       <div>
         { content }
+        <div className="panel-body">
+          <StudentList teacher={this.props.teacher}
+                       klass={this.props.klass}/>
+        </div>
       </div>
     );
   }
