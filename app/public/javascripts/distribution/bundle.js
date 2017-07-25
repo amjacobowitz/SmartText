@@ -25898,13 +25898,13 @@
 	      logo = React.createElement(
 	        Link,
 	        { to: "students", className: "navbar-brand", params: { id: student._id } },
-	        React.createElement("img", { src: "../../../images/smartext_final.png", className: "logo", alt: "SmartText" })
+	        React.createElement("img", { src: "../../../images/smartext_final_v3.png", className: "logo", alt: "SmartText" })
 	      );
 	    } else {
 	      logo = React.createElement(
 	        Link,
 	        { to: "/", className: "navbar-brand" },
-	        React.createElement("img", { src: "../../../images/smartext_final3.png", className: "logo", alt: "SmartText" })
+	        React.createElement("img", { src: "../../../images/smartext_final_v3.png", className: "logo", alt: "SmartText" })
 	      );
 	    }
 

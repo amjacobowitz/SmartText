@@ -28,9 +28,9 @@ var Header = React.createClass({
       logo = <Link to='lessonPanel' className="navbar-brand" params={{id: teacher._id }}><img src="../../../images/smartext_final.png" className="logo" alt="SmartText" / ></Link>
     } else if (student) {
       content = <p className="navbar-text navbar-left">{student.first_name}</p>
-      logo = <Link to='students' className="navbar-brand" params={{id: student._id }}><img src="../../../images/smartext_final.png" className="logo" alt="SmartText" / ></Link>
+      logo = <Link to='students' className="navbar-brand" params={{id: student._id }}><img src="../../../images/smartext_final_v3.png" className="logo" alt="SmartText" / ></Link>
     } else {
-      logo = <Link to='/' className="navbar-brand"><img src="../../../images/smartext_final3.png" className="logo" alt="SmartText" / ></Link>
+      logo = <Link to='/' className="navbar-brand"><img src="../../../images/smartext_final_v3.png" className="logo" alt="SmartText" / ></Link>
     }
 
     return (
